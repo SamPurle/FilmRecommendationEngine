@@ -234,6 +234,9 @@ from CTE_AllScores
 
 select top 10
 	title
+	,ApprovalScore
+	,CatScore
+	,ActorScoreFilm
 	,TotalScore
 into dbo.TotalScore
 from CTE_TotalScore as T
@@ -242,7 +245,8 @@ on T.film_id = F.film_id
 order by TotalScore desc
 
 select
-	*
+	title
+	,TotalScore
 from dbo.TotalScore
 
 /*
